@@ -52,6 +52,10 @@ Steps for reproducing the results:
     * prepare the graph for every document in the corpus with DocumentGCN/text2graphs.ipynb
     * learn the model and make predictions with DocumentGCN/DocumentGCN.ipynb
 * Non-graph-oriented models are contained in the NB&DNN folder.
+   * run: "unzip pretrain_models/simple_word2vec.zip -d pretrain_models/"
+   * run the code in the jupyter notebook:
+       * tfidfNB -- is a Naive Bayes with tf-idf feature vectors
+       * BiLSTM_W2V100 -- contain simple bidirectional lstm model with word2vec features
 
 ## Contact
 Created by [Robert Benke](https://www.linkedin.com/in/robert-benke-396b56175/) - feel free to contact me!
