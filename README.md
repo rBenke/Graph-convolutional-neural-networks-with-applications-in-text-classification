@@ -51,7 +51,8 @@ Steps for reproducing the results:
 * DocumentGCN
     * run: `wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz" -P ./pretrain_models`
     or download the _GoogleNews-vectors-negative300.bin.gz_ file by yourself and place it in the pretrain_models folder.
-    * prepare the graph for every document in the corpus with DocumentGCN/text2graphs.ipynb
+    * (remove everything from _data/DocumentGCN_Graphs_ AND prepare the graph for every document in the corpus with DocumentGCN/text2graphs.ipynb) OR
+    run `unzip data/DocumentGCN_Graphs/txt_features1843_04022021.zip -d ./data/DocumentGCN_Graphs/` to unpacked example data
     * learn the model and make predictions with DocumentGCN/DocumentGCN.ipynb
 * Non-graph-oriented models are contained in the NB&DNN folder.
    * run: `unzip pretrain_models/simple_word2vec.zip -d pretrain_models/`
