@@ -44,14 +44,20 @@ The considered neural network contained few GCN layers followed by global poolin
 
 ## Repository description
 Steps for reproducing the results:
-* run the data/load_raw_data.ipynb -- it will create a feather file with all the documents in single dataframe and it will download the word2vec model.
+* run the data/load_raw_data.ipynb -- it will create a feather file with all the documents in a single dataframe.
 * TextGCN:
     * prepare the heterogenous word-document graph for the whole corpus with TextGCN/text2graph.ipynb
     * learn the model and make predictions with TextGCN/TextGCN.ipynb
 * DocumentGCN
+    * run: `wget -c "https://s3.amazonaws.com/dl4j-distribution/GoogleNews-vectors-negative300.bin.gz" -P ./pretrain_models`
+    or download the _GoogleNews-vectors-negative300.bin.gz_ file by yourself and place it in the pretrain_models folder.
     * prepare the graph for every document in the corpus with DocumentGCN/text2graphs.ipynb
     * learn the model and make predictions with DocumentGCN/DocumentGCN.ipynb
 * Non-graph-oriented models are contained in the NB&DNN folder.
+   * run: `unzip pretrain_models/simple_word2vec.zip -d pretrain_models/`
+   * run the code in the jupyter notebook:
+       * tfidfNB -- is a Naive Bayes with tf-idf feature vectors
+       * BiLSTM_W2V100 -- contain simple bidirectional lstm model with word2vec features
 
 ## Contact
 Created by [Robert Benke](https://www.linkedin.com/in/robert-benke-396b56175/) - feel free to contact me!
